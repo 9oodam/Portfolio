@@ -1,0 +1,152 @@
+@font-face {
+    font-family: 'taebaek';
+    src: url(../font/TAEBAEK\ milkyway.ttf) format('truetype');
+}
+
+body {
+    font-family: 'taebaek';
+    margin: 0; padding: 0;
+}
+
+/* header 시작 */
+.header {
+    width: 100%; height: 85px;
+    background-color: white;
+    display: flex;
+    justify-content: flex-end; /* 오른쪽 끝으로 이동 */
+    align-items: center;
+    position: absolute;
+    top: 0;
+    transition: 1s;
+
+}
+.header::before {
+    content: "Godam";
+    background-color: rgb(28, 48, 46);
+    color: white;
+    font-weight: 500; font-size: 35px;
+    width: 130px; height: 50px;
+    display: flex; justify-content: center; align-items: center;
+    position: absolute; left: 15px;
+}
+.header::after {
+    content: "City";
+    font-weight: bold; font-size: 30px;
+    position: absolute; top: 31px; left: 150px;
+}
+.header.is-active {
+    position: fixed;
+    animation: headerAni 1s;
+}
+.header ul {
+    display: flex;
+    list-style: none;
+    font-weight: bold;
+}
+.header ul li {
+    margin: 15px;
+}
+@keyframes headerAni {
+    from {
+        top: -80px;
+    }
+    to {
+        top: 0;
+    }
+}
+/* header 끝 */
+
+/* home 시작 */
+.home {
+    width: 100%; height: 100vh;
+    position: relative;
+    z-index: -1;
+}
+.home .content01 {
+    width: 100%; height: 100%;
+}
+.overlay {
+    width: 50%; height: 100%;
+    background-image: url(./img/palmtree.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: fixed;
+}
+.content01 .text01 {
+    position: absolute;
+    right: 5%; top: 50%;
+    transform: translateY(-50%);
+}
+.content01 .text01 p {
+    color: rgb(28, 48, 46);
+    font-weight: bold; font-size: 20px;
+    margin: 0 0 10px 0; padding: 0;
+}
+.content01 .text01 h1 {
+    font-weight: bold; font-size: 55px;
+    margin: 0; padding: 0;
+}
+.content01 .text01 h2 {
+    margin: 15px 0 0 0; padding: 0;
+    font-size: 25px;
+}
+.text01 h2 span {
+    color: rgb(28, 48, 46);
+    font-size: 25px;
+}
+.text01 h2 span::before {
+    content: "";
+    width: 100%; height: 2px;
+    background-color: rgb(28, 48, 46);
+    position: absolute;
+    bottom: -1px;
+}
+
+.content01 .mouse {
+    position: absolute;
+    background-color: #edf0ff;
+    width: 70px; height: 70px;
+    bottom: 120px; left: 50%;
+    transform: translateX(-50%) rotate(45deg);
+}
+.content01 .mouse .arrow {
+    width: 2px; height: 25px;
+    background-color: rgb(28, 48, 46);
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%) rotate(-45deg);
+    /* animation: ani 1s infinite; */
+}
+.content01 .mouse .arrow::before,
+.content01 .mouse .arrow::after {
+    content: "";
+    width: 2px; height: 10px;
+    background-color: rgb(28, 48, 46);
+    position: absolute;
+    bottom: 0; left: 4px;
+    transform: rotate(45deg);
+
+}
+.content01 .mouse .arrow::after {
+    left: -4px;
+    transform: rotate(-45deg);
+}
+@keyframes ani {
+    from {
+        left: 50%;
+        opacity: 1;
+        transform: translate(-50%, -50%) rotate(-45deg);
+    }
+    to {
+        left: 60%;
+        opacity: 0;
+        transform: translate(-50%, -10%) rotate(-45deg);
+
+    }
+}
+
+.content02 {
+    width: 100%; height: 500px;
+    background-color: bisque;
+}
+/* home 끝 */
