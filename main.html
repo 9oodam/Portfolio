@@ -15,14 +15,17 @@
         <div class="left-nav">
             <p class="nav-logo">D<span></span></p>
             <ul>
-                <li>Home</li>
-                <li>About</li>
-                <li>Skills</li>
-                <li>Projects</li>
-                <li>Contact</li>
+                <li onclick="moveHome()">Home</li>
+                <li onclick="moveAbout()">About</li>
+                <li onclick="moveSkills()">Skills</li>
+                <li onclick="moveProjects()">Projects</li>
+                <li onclick="moveContact()">Contact</li>
             </ul>
         </div>
+
+        <!-- 네비게이션 제외한 화면 -->
         <div class="right-screen">
+            <!-- home 시작 -->
             <div class="home">
                 <div class="home-top">
                     <span class="line"></span>
@@ -33,10 +36,16 @@
                     </div>
                 </div>
                 <div class="home-bottom">
+                    <div class="building">
+                        <div class="walking"></div>
+                    </div>
+                    <div class="triangle"></div>
                     <p>Damin<br>Portfolio</p>
                 </div>
             </div>
-    
+            <!-- home 끝 -->
+
+            <!-- about 시작 -->
             <div class="about">
                 <h1>About</h1>
                 <div class="about-wrap">
@@ -95,8 +104,10 @@
                         </div>
                     </div>
                 </div>
-            </div> <!-- about 끝 -->
+            </div>
+            <!-- about 끝 -->
     
+            <!-- skills 시작 -->
             <div class="skills">
                 <h1>Skills</h1>
                 <div class="skills-wrap">
@@ -118,8 +129,10 @@
                         <img src="./img/logo_github.png" alt="">
                     </div>
                 </div>
-            </div> <!-- skills 끝 -->
+            </div>
+            <!-- skills 끝 -->
 
+            <!-- project 시작 -->
             <div class="project">
                 <h1>Projects</h1>
                 <div class="project-wrap">
@@ -146,7 +159,7 @@
                             유저는 다섯 단계의 몬스터를 선택하여 싸울 수 있고, 유저의 공격과 몬스터의 공격이 한 세트이다.
                             몬스터를 한 번 해치울 때마다 레벨, 공격력, 방어력이 상승되고 보상을 받는다.
                             받은 보상으로 무기와 방어구 포션 등을 구매할 수 있다.</p>
-                            <button onclick="location.href='https://clean-van-205.notion.site/20230317-21-Toy-Project_-074c72fa445843b6b7d3706c2603c3c0'">Read more</button>
+                            <div class="button" onclick="location.href='https://clean-van-205.notion.site/20230317-21-Toy-Project_-074c72fa445843b6b7d3706c2603c3c0'">Read more</div>
                             <div class="line"></div>
                             <ul>
                                 <li class="bold">GitHub</li>
@@ -172,7 +185,7 @@
                         </div>
                         <div class="info">
                             <p>집에 보내조</p>
-                            <button>Read more</button>
+                            <div class="button">Read more</div>
                             <div class="line"></div>
                             <ul>
                                 <li class="bold">GitHub</li>
@@ -183,36 +196,40 @@
                         </div>
                     </div>
                 </div>
-            </div> <!-- project 끝 -->
+            </div>
+            <!-- project 끝 -->
 
+            <!-- contact 시작 -->
             <div class="contact">
                 <h1>Contact</h1>
                 <div class="contact-wrap">
                     <div class="contact-icon">
-                        <img src="./img/contact/github.png" alt="" onclick="location.href='https://github.com/9oodam'">
-                        <p onclick="location.href='https://github.com/9oodam'">https://github.com/9oodam</p>
+                        <div style="background-image: url(./img/icon4.svg); background-repeat: no-repeat; background-size: contain;" class="icon01" onclick="copyTel()">
+                            <div id="tel">01025559251</div>
+                        </div>
+                        <div style="background-image: url(./img/icon5.svg); background-repeat: no-repeat; background-size: contain;" class="icon02" onclick="copyEmail()">
+                            <div id="email">godamcity98@gmail.com</div>
+                        </div>
+                        <div style="background-image: url(./img/contact/github.png); background-repeat: no-repeat; background-size: contain;" class="icon03" onclick="location.href='https://github.com/9oodam'">
+                            <div id="github">gitHub</div>
+                        </div>
+                        <div style="background-image: url(./img/contact/notion.svg); background-repeat: no-repeat; background-size: contain;" class="icon04" onclick="location.href='https://www.notion.so/318bd3778a504c0e9ab5764cbbd16a7b'">
+                            <div id="notion">notion</div>
+                        </div>
+                        <div style="background-image: url(./img/contact/instagram.png); background-repeat: no-repeat; background-size: contain;" class="icon05" onclick="location.href='https://instagram.com/9oodam?igshid=ZDdkNTZiNTM='">
+                            <div id="instagram">@9oodam</div>
+                        </div>
                     </div>
-                    <div class="contact-icon">
-                        <img src="./img/contact/notion.svg" alt="" onclick="location.href='https://www.notion.so/318bd3778a504c0e9ab5764cbbd16a7b'">
-                        <p onclick="location.href='https://www.notion.so/318bd3778a504c0e9ab5764cbbd16a7b'">https://www.notion.so/318bd3778a504c0e9ab5764cbbd16a7b</p>
-                    </div>
-                    <div class="contact-icon">
-                        <img src="./img/contact/instagram.png" alt="" onclick="location.href='https://instagram.com/9oodam?igshid=ZDdkNTZiNTM='">
-                        <p onclick="location.href='https://instagram.com/9oodam?igshid=ZDdkNTZiNTM='">@9oodam</p>
-                    </div>
+                    <div class="contact-bubble"></div>
                 </div>
 
                 <div class="rights">
                     <p>© 2023 9oodam. All rights reserved.</p>
                 </div>
-            </div> <!-- contact 끝 -->
-
-
+            </div>
+            <!-- contact 끝 -->
 
         </div> <!-- right screen 끝 -->
- 
-
-
     </div>
 
     <!-- Swiper JS -->

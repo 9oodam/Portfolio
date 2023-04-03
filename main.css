@@ -30,7 +30,7 @@ body {
     position: fixed; left: 0; top: 0;
     width: 15%; height: 100vh;
     max-width: 90px;
-    background-color: #BABABA; opacity: 0.7;
+    background-color: rgba(255, 255, 255, 0.918);
     z-index: 100;
 }
 .left-nav p {
@@ -67,6 +67,9 @@ body {
     width: 100%; height: 100vh;
     position: relative;
 }
+.home .home-top {
+    width: 100%; height: 50vh;
+}
 .home .home-top p {
     color: white;
     margin: 0; padding: 0;
@@ -91,12 +94,13 @@ body {
     background-size: cover;
     filter: invert(100%);
     animation: lightAni2 3s;
+    animation-fill-mode: forwards; /* 애니메이션 마지막 상태 유지 */
 }
 @keyframes lightAni2 {
     from {
         top : 0;
     }to {
-        top : 30vh;
+        top : 25vh;
     }
 }
 .home .home-top .light-wrap .light-line::before {
@@ -106,6 +110,7 @@ body {
     width: 4px; height: 20px;
     z-index: 1;
     animation: lightAni 3s;
+    animation-fill-mode: forwards;
 }
 @keyframes lightAni {
     from {
@@ -113,14 +118,69 @@ body {
         height: 0;
     }to {
         opacity: 1;
-        height: 30vh;
+        height: 25vh;
     }
+}
+.home .home-bottom {
+    width: 100%; height: 50vh;
+    position: relative;
+}
+.home .home-bottom .building {
+    width: 100%; height: 100%;
+    position: absolute; bottom: 0; left: 0;
+}
+@media only screen and (min-width: 1100px) {
+    .home .home-bottom .building .walking {
+        width: 25%; height: 25%;
+        background-image: url(./img/walking.gif);
+        background-repeat: no-repeat;
+        background-size: contain;
+        position: absolute; bottom: 0; left: -10%;
+        animation: walking 40s forwards;
+        z-index: -200;
+    }
+    @keyframes walking {
+        0% {left: -10%;}
+        100% {left: 110%}
+    }
+}
+
+.home .home-bottom .triangle {
+    position: absolute; bottom: -370px; right: -85px;
+    background-color: rgb(255, 255, 198); opacity: 0.3;
+    width: 650px; height: 650px;
+    transform: rotate(45deg);
+    overflow: hidden;
+    animation: lightAni3 7s;
+    animation-fill-mode: forwards;
+    z-index: -300;
+}
+@keyframes lightAni3 {
+    0% {opacity: 0;}
+    50% {opacity: 0;}
+    55% {opacity: 0.3;}
+    60% {opacity: 0;}
+    65% {opacity: 0.3;}
+    70% {opacity: 0;}
+    100% {opacity: 0.3;}
 }
 .home .home-bottom p {
     color: white;
     font-size: 70px; font-weight: bold;
     position: absolute; bottom: 0; right: 130px;
     text-align: right;
+    text-shadow: 2px 10px 5px black;
+    animation: lightAni4 7s;
+    animation-fill-mode: forwards;
+}
+@keyframes lightAni4 {
+    0% {opacity: 0;}
+    50% {opacity: 0;}
+    55% {opacity: 1;}
+    60% {opacity: 0;}
+    65% {opacity: 1;}
+    70% {opacity: 0;}
+    100% {opacity: 1;}
 }
 
 /* about */
@@ -135,11 +195,11 @@ body {
 .about h1 {
     font-size: 50px; font-weight: bold;
     justify-content: center; align-items: center; text-align: center;
-    position: absolute; top: 60px; left: 50%;
+    position: absolute; top: 100px; left: 50%;
     transform: translateX(-50%);
 }
 .about .about-wrap {
-    position: absolute; top: 190px; left: 50%;
+    position: absolute; top: 270px; left: 50%;
     transform: translateX(-50%);
     justify-content: center; align-items: center;
     width: 510px; height: 300px;
@@ -177,7 +237,7 @@ body {
 
 /* skills */
 .skills {
-    width: 100vw; height: 100vh;
+    width: 100vw; height: 110vh;
     position: relative;
 }
 .skills h1 {
@@ -190,9 +250,15 @@ body {
     width: 70%; height: 75vh;
     position: absolute; top: 190px; left: 50%;
     transform: translateX(-50%);
-    border: 1px solid;
+    border: 1px solid white;
     display: flex; flex-wrap: wrap;
+    justify-content: center;
     align-content: center; flex-flow: column wrap;
+}
+@media only screen and (min-width: 1100px) {
+    .skills .skills-wrap {
+        flex-flow: row wrap;
+    }
 }
 .skills .skills-wrap .skills-item {
     width: 220px;
@@ -226,7 +292,7 @@ body {
 }
 /* project */
 .project {
-    width: 100vw; height: 100vh;
+    width: 100vw; height: 110vh;
     position: relative;
     background-color: white;
 }
@@ -237,7 +303,7 @@ body {
     transform: translateX(-50%);
 }
 .project .project-wrap {
-    height: 600px;
+    width: 500px; height: 600px;
     position: absolute; top: 140px; left: 50%;
     transform: translateX(-50%);
     display: flex; align-content: flex-start;
@@ -248,7 +314,7 @@ body {
     display: none;
 }
 .project .project-wrap .project-item {
-    border: 1px solid; border-radius: 15px;
+    border: 5px solid; border-radius: 15px;
     padding: 20px; box-sizing: border-box;
     width: 500px; height: 600px;
     background-color: white;
@@ -263,14 +329,21 @@ body {
     text-align: center;
 }
 .project-item .info {
-    width: 460px;
+    width: 95%;
 }
 .project-item .info p {
-    width: 460px;
     font-size: 12px;
 }
-.project-item .info button {
-
+.project-item .info .button {
+    font-family: 'flower';
+    width: 100px; height: 25px;
+    border: 2px solid rgb(194, 194, 0);
+    background-color: yellow;
+    border-radius: 4px;
+    box-shadow: 0 3px 3px 0 rgb(194, 194, 0);
+    font-size: 14px;
+    text-align: center;
+    cursor: pointer;
 }
 .project-item .info .line {
     width: 100%;
@@ -319,47 +392,73 @@ body {
 .contact h1 {
     font-size: 50px; font-weight: bold;
     justify-content: center; align-items: center; text-align: center;
-    position: absolute; top: 60px; left: 50%;
+    position: absolute; top: 100px; left: 50%;
     transform: translateX(-50%);
     color: white;
 }
 .contact .contact-wrap {
-    position: absolute; top: 190px; left: 50%;
+    position: absolute; top: 270px; left: 50%;
     transform: translateX(-50%);
-    width: 500px; height: 300px;
+    width: 550px; height: 200px;
     box-sizing: border-box;
-    display: flex; flex-wrap: wrap;
+    justify-content: center; align-items: center;
+    display: flex; flex-wrap: wrap; flex-direction: column;
 }
 .contact .contact-wrap .contact-icon {
     width: 100%;
     margin-bottom: 10px;
+    display: flex;
+    justify-content: center; align-items: center;
+    position: relative;
 }
-.contact-wrap .contact-icon img {
+.contact-wrap .contact-icon div {
     width: 50px; height: 50px;
+    margin: 0 30px 0 30px;
     filter: invert(100%);
     cursor: pointer;
 }
-.contact-wrap .contact-icon p {
+#tel, #email, #github, #notion, #instagram {
+    height: 40px;
+    border-bottom: 1px solid white;
     color: white;
-    cursor: pointer;
+    text-align: center;
+    margin-top: 20px;
+    padding: 0 10px 0 10px;
+    position: absolute; top: 50px; left: -40px;
+    display: none;
 }
+.contact-icon .icon01:hover #tel {
+    display: flex;
+    justify-content: center; align-items: center;
+}
+.contact-icon .icon02:hover #email {
+    display: flex;
+    justify-content: center; align-items: center;
+}
+.contact-icon .icon03:hover #github {
+    display: flex;
+    justify-content: center; align-items: center;
+}
+.contact-icon .icon04:hover #notion {
+    display: flex;
+    justify-content: center; align-items: center;
+}
+.contact-icon .icon05:hover #instagram {
+    display: flex;
+    justify-content: center; align-items: center;
+}
+
+
 
 /* rights */
 .rights {
     width: 100%; height: 90px;
-    background-color: white;
     position: absolute; bottom: 0;
 }
 .rights p {
+    color: white;
     text-align: center;
     justify-content: center; align-items: center;
     position: absolute; top: 30%; left: 50%;
     transform: translate(-50%, -50%);
 }
-
-
-/* 해야될거...
-nav 제외 중앙정렬
-media query
-animation 추가 - home에서 전등 깜빡, skills에서 mouseon 
-projects에서 가로 스크롤 */
