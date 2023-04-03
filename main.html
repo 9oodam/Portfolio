@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Damin Portfolio</title>
     <link rel="stylesheet" href="./main.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+
 </head>
 <body>
     <div class="wrap">
@@ -20,69 +22,216 @@
                 <li>Contact</li>
             </ul>
         </div>
+        <div class="right-screen">
+            <div class="home">
+                <div class="home-top">
+                    <span class="line"></span>
+                    <p>Blockchain<br>Developer</p>
+                    <div class="light-wrap">
+                        <div class="light"></div>
+                        <span class="light-line"></span>
+                    </div>
+                </div>
+                <div class="home-bottom">
+                    <p>Damin<br>Portfolio</p>
+                </div>
+            </div>
+    
+            <div class="about">
+                <h1>About</h1>
+                <div class="about-wrap">
+                    <div class="about-item">
+                        <div class="about-icon">
+                            <img src="./img/icon1.svg" alt="">
+                        </div>
+                        <div class="about-text">
+                            <p class="text01">이름</p>
+                            <p class="text02">구담인</p>
+                        </div>
+                    </div>
+                    <div class="about-item">
+                        <div class="about-icon">
+                            <img src="./img/icon2.svg" alt="">
+                        </div>
+                        <div class="about-text">
+                            <p class="text01">생년월일</p>
+                            <p class="text02">98.04.05</p>
+                        </div>
+                    </div>
+                    <div class="about-item">
+                        <div class="about-icon">
+                            <img src="./img/icon3.svg" alt="">
+                        </div>
+                        <div class="about-text">
+                            <p class="text01">주소지</p>
+                            <p class="text02">서울특별시 용산구</p>
+                        </div>
+                    </div>
+                    <div class="about-item">
+                        <div class="about-icon">
+                            <img src="./img/icon4.svg" alt="">
+                        </div>
+                        <div class="about-text">
+                            <p class="text01">연락처</p>
+                            <p class="text02">010-2555-9251</p>
+                        </div>
+                    </div>
+                    <div class="about-item">
+                        <div class="about-icon">
+                            <img src="./img/icon5.svg" alt="">
+                        </div>
+                        <div class="about-text">
+                            <p class="text01">이메일</p>
+                            <p class="text02">godamcity98@gmail.com</p>
+                        </div>
+                    </div>
+                    <div class="about-item">
+                        <div class="about-icon">
+                            <img src="./img/icon6.svg" alt="">
+                        </div>
+                        <div class="about-text">
+                            <p class="text01">학력</p>
+                            <p class="text02">숙명여자대학교 재학<br>(앙트러프러너십, IT공학전공)</p>
+                        </div>
+                    </div>
+                </div>
+            </div> <!-- about 끝 -->
+    
+            <div class="skills">
+                <h1>Skills</h1>
+                <div class="skills-wrap">
+                    <div class="skills-item frontend">
+                        <div class="skills-title">Frontend</div>
+                        <div class="line"></div>
+                        <img src="./img/logo_html_css_js.png" alt="">
+                        <img src="./img/logo_react.png" alt="">
+                    </div>
+                    <div class="skills-item backend">
+                        <div class="skills-title">Backend</div>
+                        <div class="line"></div>
+                        <img src="./img/logo_nodejs.png" alt="">
+                        <img src="./img/logo_python.png" alt="">
+                    </div>
+                    <div class="skills-item control">
+                        <div class="skills-title">Version Control</div>
+                        <div class="line"></div>
+                        <img src="./img/logo_github.png" alt="">
+                    </div>
+                </div>
+            </div> <!-- skills 끝 -->
 
-        <div class="home">
-            <div class="home-top">
-                <span class="line"></span>
-                <p>Blockchain<br>Developer</p>
-                <div class="light-wrap">
-                    <div class="light"></div>
-                    <span class="light-line"></span>
+            <div class="project">
+                <h1>Projects</h1>
+                <div class="project-wrap">
+                    <div class="project-item">
+                        <div class="title">턴제 미니게임 (feat. 메이플스토리)</div>
+                        <div class="sub-title">2023.03 (4人 팀 프로젝트)</div>
+                        <div class="swiper-wrap">
+                            <div class="swiper mySwiper">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide"><img src="./img/project/project1/1.PNG" alt=""></div>
+                                    <div class="swiper-slide"><img src="./img/project/project1/2.PNG" alt=""></div>
+                                    <div class="swiper-slide"><img src="./img/project/project1/3.PNG" alt=""></div>
+                                    <div class="swiper-slide"><img src="./img/project/project1/4.PNG" alt=""></div>
+                                    <div class="swiper-slide"><img src="./img/project/project1/5.PNG" alt=""></div>
+                                    <div class="swiper-slide"><img src="./img/project/project1/6.PNG" alt=""></div>
+                                </div>
+                                <div class="swiper-button-next"></div>
+                                <div class="swiper-button-prev"></div>
+                                <div class="swiper-pagination"></div>
+                            </div>
+                        </div>
+                        <div class="info">
+                            <p>간단한 턴제 게임<br>
+                            유저는 다섯 단계의 몬스터를 선택하여 싸울 수 있고, 유저의 공격과 몬스터의 공격이 한 세트이다.
+                            몬스터를 한 번 해치울 때마다 레벨, 공격력, 방어력이 상승되고 보상을 받는다.
+                            받은 보상으로 무기와 방어구 포션 등을 구매할 수 있다.</p>
+                            <button onclick="location.href='https://clean-van-205.notion.site/20230317-21-Toy-Project_-074c72fa445843b6b7d3706c2603c3c0'">Read more</button>
+                            <div class="line"></div>
+                            <ul>
+                                <li class="bold">GitHub</li>
+                                <li class="unbold">https://github.com/9oodam/miniGame</li>
+                                <li class="bold">Frontend</li>
+                                <li class="unbold">CSS, JavaScript</li>
+                            </ul>
+                        </div>
+                    </div>
+    
+                    <div class="project-item">
+                        <div class="title">머리 아파용</div>
+                        <div class="sub-title">2023.04 (개인 프로젝트)</div>
+                        <div class="swiper-wrap">
+                            <div class="swiper mySwiper">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide"><img src="./img/project/project2/letmegohome.jpg" alt=""></div>
+                                </div>
+                                <div class="swiper-button-next"></div>
+                                <div class="swiper-button-prev"></div>
+                                <div class="swiper-pagination"></div>
+                            </div>
+                        </div>
+                        <div class="info">
+                            <p>집에 보내조</p>
+                            <button>Read more</button>
+                            <div class="line"></div>
+                            <ul>
+                                <li class="bold">GitHub</li>
+                                <li class="unbold"></li>
+                                <li class="bold">Frontend</li>
+                                <li class="unbold">CSS, JavaScript</li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <div class="home-bottom">
-                <p>DAMIN<br>PORTFOLIO</p>
-            </div>
-        </div>
+            </div> <!-- project 끝 -->
 
-        <div class="about">
-            <h1>ABOUT</h1>
-            <div class="about-wrap">
-                <div class="about-item">
-                    <div class="about-icon"></div>
-                    <div class="about-text">
-                        <p class="text01"></p>
-                        <p class="text02"></p>
+            <div class="contact">
+                <h1>Contact</h1>
+                <div class="contact-wrap">
+                    <div class="contact-icon">
+                        <img src="./img/contact/github.png" alt="" onclick="location.href='https://github.com/9oodam'">
+                        <p onclick="location.href='https://github.com/9oodam'">https://github.com/9oodam</p>
+                    </div>
+                    <div class="contact-icon">
+                        <img src="./img/contact/notion.svg" alt="" onclick="location.href='https://www.notion.so/318bd3778a504c0e9ab5764cbbd16a7b'">
+                        <p onclick="location.href='https://www.notion.so/318bd3778a504c0e9ab5764cbbd16a7b'">https://www.notion.so/318bd3778a504c0e9ab5764cbbd16a7b</p>
+                    </div>
+                    <div class="contact-icon">
+                        <img src="./img/contact/instagram.png" alt="" onclick="location.href='https://instagram.com/9oodam?igshid=ZDdkNTZiNTM='">
+                        <p onclick="location.href='https://instagram.com/9oodam?igshid=ZDdkNTZiNTM='">@9oodam</p>
                     </div>
                 </div>
-                <div class="about-item">
-                    <div class="about-icon"></div>
-                    <div class="about-text">
-                        <p class="text01"></p>
-                        <p class="text02"></p>
-                    </div>
+
+                <div class="rights">
+                    <p>© 2023 9oodam. All rights reserved.</p>
                 </div>
-                <div class="about-item">
-                    <div class="about-icon"></div>
-                    <div class="about-text">
-                        <p class="text01"></p>
-                        <p class="text02"></p>
-                    </div>
-                </div>
-                <div class="about-item">
-                    <div class="about-icon"></div>
-                    <div class="about-text">
-                        <p class="text01"></p>
-                        <p class="text02"></p>
-                    </div>
-                </div>
-                <div class="about-item">
-                    <div class="about-icon"></div>
-                    <div class="about-text">
-                        <p class="text01"></p>
-                        <p class="text02"></p>
-                    </div>
-                </div>
-                <div class="about-item">
-                    <div class="about-icon"></div>
-                    <div class="about-text">
-                        <p class="text01"></p>
-                        <p class="text02"></p>
-                    </div>
-                </div>
-            </div>
-        </div>
+            </div> <!-- contact 끝 -->
+
+
+
+        </div> <!-- right screen 끝 -->
+ 
+
+
     </div>
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+
+    <!-- Initialize Swiper -->
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+                pagination: {
+                el: ".swiper-pagination",
+                type: "fraction",
+            },
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+        });
+    </script>
+
 </body>
 <script src="./main.js"></script>
 </html>
