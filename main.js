@@ -1,9 +1,11 @@
 // Navigation 누르면 이동할 위치 지정
-let homeY = document.querySelector(".home").getBoundingClientRect().top + window.pageYOffset;
-let aboutY = document.querySelector(".about").getBoundingClientRect().top + window.pageYOffset;
-let skillsY = document.querySelector(".skills").getBoundingClientRect().top + window.pageYOffset;
-let projectY = document.querySelector(".project").getBoundingClientRect().top + window.pageYOffset;
-let contactY = document.querySelector(".contact").getBoundingClientRect().top + window.pageYOffset;
+let homeY = parseInt(document.querySelector(".home").getBoundingClientRect().top + window.pageYOffset);
+let aboutY = parseInt(document.querySelector(".about").getBoundingClientRect().top + window.pageYOffset);
+let skillsY = parseInt(document.querySelector(".skills").getBoundingClientRect().top + window.pageYOffset);
+let projectY = parseInt(document.querySelector(".project").getBoundingClientRect().top + window.pageYOffset);
+let contactY = parseInt(document.querySelector(".contact").getBoundingClientRect().top + window.pageYOffset);
+
+console.log(homeY, aboutY, skillsY, projectY, contactY);
 
 function moveHome() {
     window.location.reload();
@@ -38,4 +40,34 @@ function copyEmail() {
     window.navigator.clipboard.writeText(emailNum.textContent);
     console.log(emailNum.textContent);
     alert("이메일 주소가 복사 되었습니다.");
+}
+
+
+// Index 제목 아래 line
+let underLine = document.querySelectorAll(".underline");
+
+window.onscroll = function() {
+    let scrollY = parseInt(window.scrollY);
+
+    if(scrollY > (aboutY - 100) && scrollY < (skillsY - 150)) {
+        underLine[0].classList.add("is-active");
+        console.log("about underline 생성");
+    }else if(scrollY < 100 || scrollY > skillsY) {
+        underLine[0].classList.remove("is-active");
+        console.log("about underline 제거");
+    }
+    if(scrollY > (skillsY - 100) && scrollY < (projectY - 150)) {
+        underLine[1].classList.add("is-active");
+        console.log("skills underline 생성");
+    }else if(scrollY > projectY) {
+        underLine[1].classList.remove("is-active");
+        console.log("skills underline 제거");
+    }
+    if(scrollY > (contactY - 100) ) {
+        underLine[2].classList.add("is-active");
+        console.log("contact underline 생성");
+    }else if(scrollY < projectY) {
+        underLine[2].classList.remove("is-active");
+        console.log("contact underline 제거");
+    }
 }
